@@ -1,0 +1,22 @@
+@layout('layouts/main')
+
+@section('profile')
+    @entryPointStyles('profile')
+    <div class="profile">
+      <div class="timeline"> 
+        {{user.name}}
+      </div>
+        <div class="presentation">
+            <h1 class="name">{{user.name}}</h1>
+            <p class="email">{{user.email}}</p>
+            @if(edit)
+              <div class="button">
+                  <a href="{{ route('editProfile') }}">
+                    <button> EDITAR PERFIL </button>
+                  </a>
+              </div>
+            @endif
+        </div>
+        @include('layouts/partials/posts') 
+      </div>       
+@endsection 
