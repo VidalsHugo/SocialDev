@@ -1,0 +1,53 @@
+@layout('layouts/main')
+
+@section('profile')
+    @entryPointStyles('profile')
+    
+    <div class="profile">
+      <div class="timeline"> 
+        <div class="timeline-menu">
+
+          <div class="usertimeline" id="profile">
+            <button onclick="PostsDisplay(1)">{{user.name}}</button>
+          </div>
+           <div class="usertimeline" id="curtidos">
+            <button onclick="PostsDisplay(2)">Curtidos</button>
+           </div>
+        </div>
+
+      </div>
+        <div class="presentation">
+            <h1 class="name">{{user.name}}</h1>
+            <p class="email">{{user.email}}</p>
+            @if(edit)
+              <div class="button">
+                  <a href="{{ route('editProfile') }}">
+                    <button> EDITAR PERFIL </button>
+                  </a>
+              </div>
+            @endif
+        </div>
+        <div id="allPosts">
+          @include('layouts/partials/posts')
+        </div> 
+        <div id="likedPost" style="display: none;">
+          @include('layouts/partials/postsLike')
+        </div> 
+      </div>       
+
+      <script>     
+        function PostsDisplay(displayAtivo) {
+          let display1 = document.getElementById('allPosts');
+          let display2 = document.getElementById('likedPost');
+
+            if (displayAtivo === 1) {
+                display1.style.display = '';
+                display2.style.display = 'none';
+            } else if (displayAtivo === 2) {
+                display1.style.display = 'none';
+                display2.style.display = '';
+            }
+        }
+      </script>
+@endsection 
+
