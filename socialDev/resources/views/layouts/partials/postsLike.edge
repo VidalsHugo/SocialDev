@@ -1,7 +1,6 @@
 @entryPointStyles('posts')
 @entryPointScripts('postsScript')
 
-
 <script>
   function likebutton(route, id) {
   fetch(route)
@@ -47,6 +46,7 @@
   }
 }
 function toggleModal(id, route) {
+  console.log(id)
   let post = document.getElementById(id);
   let modal = post.querySelector('.marginModal');
   if (modal.style.display === 'flex') {
@@ -65,7 +65,7 @@ function toggleModal(id, route) {
 
 <div class="posts">  
   <ul>
-    @each(post in posts)     
+    @each(post in postsLike)     
       <div class="post" id="{{ post.id }}">
         <div class="create">
           <a href="{{ route('profileUser.show', {id: post.user_id})}}">

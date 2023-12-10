@@ -2,6 +2,7 @@
   "assets/app.css": "http://localhost:8080/assets/app.css",
   "assets/app.js": "http://localhost:8080/assets/app.js",
   "assets/mainScript.js": "http://localhost:8080/assets/mainScript.js",
+  "assets/postsScript.js": "http://localhost:8080/assets/postsScript.js",
   "assets/mainCss.css": "http://localhost:8080/assets/mainCss.css",
   "assets/mainCss.js": "http://localhost:8080/assets/mainCss.js",
   "assets/simple.css": "http://localhost:8080/assets/simple.css",

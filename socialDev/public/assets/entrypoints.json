@@ -13,6 +13,11 @@
         "http://localhost:8080/assets/mainScript.js"
       ]
     },
+    "postsScript": {
+      "js": [
+        "http://localhost:8080/assets/postsScript.js"
+      ]
+    },
     "mainCss": {
       "css": [
         "http://localhost:8080/assets/mainCss.css"

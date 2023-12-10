@@ -6,7 +6,7 @@
 
 :root {
     --color-text: #333;
-    --color-background: f9f9f9;
+    --color-background: #f9f9f9;
     --color-border: #ccc;
     --color-warning: red;
     --color-1: #077bff; 
@@ -254,6 +254,7 @@
     padding: 0px;
     height: 100vh;
     flex-direction: column;
+    right: 20vw;
 }
 
 .main .sidebarR{
