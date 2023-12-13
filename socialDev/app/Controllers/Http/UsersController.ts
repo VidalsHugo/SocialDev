@@ -1,5 +1,6 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import CreateUserValidator from 'App/Validators/CreateUserValidator';
+import Application from '@ioc:Adonis/Core/Application'
 
 import { Post } from 'App/Models/Post'
 import User from 'App/Models/User'
@@ -17,14 +18,26 @@ export default class UsersController{
     //Post
     public async store({ request, response, view }:HttpContextContract){
 
+        const photo = request.file('photo', {
+            size: '2mb',
+            extnames: ['jpg', 'png', 'gif'],
+        })
+
+        if(photo){
+            await photo.move(Application.publicPath('photos'));
+        }
+        
         const name = request.input('name')
         const email = request.input('email')
         const password = request.input('password')
+        console.log(photo)
+        console.log(name)
+        console.log(email)
+        console.log(password)
 
         try{
             await request.validate(CreateUserValidator);
-            
-            await User.create({ name, email, password })
+            await User.create({ name, email, password, photo: photo?.fileName  })
 
             return response.redirect().toRoute('sessions.create')
         }

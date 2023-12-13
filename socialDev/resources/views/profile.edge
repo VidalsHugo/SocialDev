@@ -16,6 +16,14 @@
         </div>
 
       </div>
+
+      <div class="all-content">
+
+      
+      <div class="photo-content">
+        <img id="photoID" src="{{`/photos/${user.photo}`}}" alt="">
+      </div>
+      
         <div class="presentation">
             <h1 class="name">{{user.name}}</h1>
             <p class="email">{{user.email}}</p>
@@ -27,6 +35,9 @@
               </div>
             @endif
         </div>
+      </div>
+
+
         <div id="allPosts">
           @include('layouts/partials/posts')
         </div> 

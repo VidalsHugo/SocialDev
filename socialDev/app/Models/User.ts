@@ -27,6 +27,9 @@ export default class User extends BaseModel {
 
   @column()
   public name: string 
+  
+  @column()
+  public photo: string
 
   @manyToMany(() => Post, {
     pivotTable: 'user_like_posts',
